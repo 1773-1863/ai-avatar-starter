@@ -4,8 +4,11 @@ import Image from 'next/image';
 import buildspaceLogo from '../assets/buildspace-logo.png';
 
 const Home = () => {
-  // Create state property
   const [input, setInput] = useState('');
+  // Add this function
+  const onChange = (event) => {
+    setInput(event.target.value);
+  };
   
   return (
 <div className="root">
@@ -19,12 +22,18 @@ const Home = () => {
       </div>
       <div className="header-subtitle">
         <h2>
-          Turn me into anyone you want! Make sure you refer to me as "abraza" in the prompt
+          Turn me into anyone you want! Make sure you refer to me as "ehakib" in the prompt
         </h2>
       </div>
-      {/* Add prompt container here */}
       <div className="prompt-container">
-        <input className="prompt-box" />
+      <input className="prompt-box" value={input} onChange={onChange} />
+       {/* Add your prompt button in the prompt container */}
+      <div className="prompt-buttons">
+        <a className="generate-button">
+          <div className="generate">
+             <p>Generate</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
