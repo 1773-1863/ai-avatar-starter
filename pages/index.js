@@ -27,9 +27,9 @@ const Home = () => {
       </div>
       <div className="prompt-container">
       <input className="prompt-box" value={input} onChange={onChange} />
-       {/* Add your prompt button in the prompt container */}
       <div className="prompt-buttons">
-        <a className="generate-button">
+       {/* Add your prompt button in the prompt container */}
+        <a className="generate-button" onClick={generateAction}>
           <div className="generate">
              <p>Generate</p>
           </div>
